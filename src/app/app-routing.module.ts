@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthorizeGuard } from './guards/authorize.guard';
 
 const routes: Routes = [
   {
@@ -10,6 +11,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },
+  {
+    path: 'doacao',
+    loadChildren: () => import('./pages/doacao/doacao.module').then( m => m.DoacaoPageModule)
+  },
+  {
+    path: 'doadores/:nome',
+    canActivate: [AuthorizeGuard],
+    loadChildren: () => import('./pages/doadores/doadores.module').then( m => m.DoadoresPageModule)
   },
 ];
 

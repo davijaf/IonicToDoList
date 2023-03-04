@@ -3,6 +3,12 @@
     <ion-title class="animate__animated animate__bounceInRight">
       <b>Lista de Tarefas</b>
     </ion-title>
+    <ion-buttons slot="secondary">
+      <ion-button fill="outline" (click)="doar()">
+        <ion-icon slot="start" name="gift" ></ion-icon>
+        Doar
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -39,10 +45,4 @@
 
 </ion-content>
 
-<ion-footer>
-  <ion-toolbar color="primary">
-    <ion-title class="animate__animated animate__bounceInRight ion-text-center">
-      V1.0.0
-    </ion-title>
-  </ion-toolbar>
-</ion-footer>
+<footer-loading [loading]="loading"></footer-loading>

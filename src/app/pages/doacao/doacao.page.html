@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="animate__animated animate__bounceInRight">Doação</ion-title >
+      <ion-buttons slot="secondary">
+        <ion-button fill="outline" (click)="retornar()">
+          <ion-icon slot="start" name="chevron-back" ></ion-icon>
+          Retornar
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2>Ajude a manter o nosso projeto</h2>
+  <ion-card (click)="fazerDoacao()">
+    <img src="../../../assets/querdoar.jpg">
+    <ion-card-content>
+
+      <b>PIX</b>
+      <br>
+      davijose@gmail.com
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" (click)="retornar()">Voltar</ion-button>
+  <ion-button expand="block" (click)="agradecimento('Davi José')">Agradecimento</ion-button>
+  <ion-button expand="block" (click)="agradecimento('Patrícia')">Agradecimento</ion-button>
+</ion-content>
+<footer-loading [loading]="loading"></footer-loading>

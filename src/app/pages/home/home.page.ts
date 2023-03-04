@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionSheetController, AlertController } from '@ionic/angular';
+import { ActionSheetController, AlertController, NavController } from '@ionic/angular';
 import { TarefaService } from 'src/app/services/tarefa.service';
 
 
@@ -11,19 +11,30 @@ import { TarefaService } from 'src/app/services/tarefa.service';
 export class HomePage {
 
   tarefaCollection : any[] = [];
+  loading : boolean = true;
 
   constructor(
     private alertCtrl :  AlertController,
     private tarefaService : TarefaService,
     private actionSheetController: ActionSheetController,
-
+    private navCtrl : NavController,
     ) {}
+
+
 
   ionViewDidEnter(){
     this.listarTarefa();
   }
 
+  doar() {
+    this.navCtrl.navigateForward('doacao');
+  }
+
   listarTarefa() {
+    setTimeout(() =>{
+      this.tarefaCollection = this.tarefaService.listar();
+      this.loading = false;
+    },3000);
     this.tarefaCollection = this.tarefaService.listar();
   }
 

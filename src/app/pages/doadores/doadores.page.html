@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title class="animate__animated animate__bounceInRight">Doadores</ion-title >
+      <ion-buttons slot="secondary">
+        <ion-button fill="outline" (click)="retornar()">
+          <ion-icon slot="start" name="chevron-back" ></ion-icon>
+          Retornar
+        </ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1>Agradecimento aos doadores</h1>
+  <h2>{{nome}}</h2>
+  <marquee><h3>Muito Obrigado!</h3></marquee>
+</ion-content>
